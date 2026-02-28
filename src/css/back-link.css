@@ -1,9 +1,9 @@
 .back-link {
   position: relative;
   display: inline-block;
-  padding: 4px 8px;
-  margin-top: 32px;
-  border: 1px solid;
+  padding: 2px 4px;
+  margin: 32px;
+  border: 1px solid rgb(5, 79, 82);
   border-radius: 8px;
 }
 .back-link::before {
