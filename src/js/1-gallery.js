@@ -83,12 +83,3 @@ galleryEl.innerHTML = images
 `
   )
   .join("");
-
-const gallery = new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
-  captionDelay: 250,
-});
-
-gallery.on("show.simplelightbox", () => {
-  console.log("Открылась картинка");
-});
