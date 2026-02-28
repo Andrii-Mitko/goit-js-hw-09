@@ -69,19 +69,25 @@ const images = [
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const refs = {
-  gallery: document.querySelector(".gallery")
-};
 
-refs.gallery.innerHTML = images.map(img => `
-  <li>
-    <a href="${img.original}">
-      <img src="${img.preview}" alt="${img.description}">
-    </a>
-  </li>
-`).join("");
+const galleryEl = document.querySelector(".gallery");
 
-const gallery = new SimpleLightbox(".gallery a");
+galleryEl.innerHTML = images
+  .map(
+    img => `
+<li class="gallery-item">
+  <a class="gallery-link" href="${img.original}">
+    <img class="gallery-image" src="${img.preview}" alt="${img.description}" />
+  </a>
+</li>
+`
+  )
+  .join("");
+
+const gallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
 gallery.on("show.simplelightbox", () => {
   console.log("Открылась картинка");
